@@ -102,7 +102,7 @@ function FeaturedCollection() {
   ];
 
   return (
-    <section className="w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 py-32 bg-white rounded-t-[3rem]">
+    <section className="w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 pt-32 pb-16 bg-white rounded-t-[3rem]">
       <div className="flex flex-col md:flex-row justify-between items-end mb-16">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Featured Collection</h2>
@@ -130,6 +130,59 @@ function FeaturedCollection() {
             </div>
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function ProductDetails() {
+  return (
+    <section className="w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 pt-16 pb-32 bg-white">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        {/* Image Side */}
+        <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square rounded-[40px] overflow-hidden bg-[#E5DCCB]">
+          <Image
+            src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=2000&auto=format&fit=crop"
+            alt="Signature Lounge Chair"
+            fill
+            className="object-cover mix-blend-multiply opacity-90"
+          />
+        </div>
+
+        {/* Content Side */}
+        <div className="flex flex-col items-start">
+          <div className="inline-block px-4 py-2 bg-gray-100 rounded-full text-sm font-bold tracking-wide uppercase mb-6">
+            Spotlight
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 text-[#141414]">
+            The Signature Lounge Chair
+          </h2>
+          <div className="text-3xl font-medium text-gray-600 mb-8">
+            $1,299
+          </div>
+          <p className="text-lg text-gray-700 leading-relaxed mb-10 font-medium max-w-xl">
+            Experience unparalleled comfort with our Signature Lounge Chair. Crafted with premium Italian leather and a solid walnut frame, this piece is designed to be the focal point of any modern living space.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 w-full max-w-xl">
+            {['Premium Italian Leather', 'Solid Walnut Frame', 'Ergonomic Support', '5-Year Warranty'].map((feature) => (
+              <div key={feature} className="flex items-center gap-3 text-gray-700 font-medium">
+                <div className="w-2 h-2 rounded-full bg-black"></div>
+                {feature}
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xl">
+            <button className="flex-1 flex items-center justify-center gap-3 bg-[#141414] text-white px-8 py-5 rounded-full font-bold text-lg hover:bg-black/80 transition-colors group">
+              <ShoppingBag className="w-5 h-5" />
+              Add to Cart
+            </button>
+            <button className="flex items-center justify-center w-[68px] h-[68px] rounded-full border-2 border-gray-200 hover:border-black transition-colors shrink-0">
+              <Heart className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -181,6 +234,7 @@ export default function Page() {
       <Navbar />
       <Hero />
       <FeaturedCollection />
+      <ProductDetails />
       <Footer />
     </main>
   );
