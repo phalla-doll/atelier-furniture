@@ -1,0 +1,14 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-color: #F4F3F0;
+  --text-color: #1A1A1A;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Satoshi', sans-serif;
+}
+
